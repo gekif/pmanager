@@ -10,4 +10,10 @@ class TaskUser extends Model
         'task_id',
         'user_id',
     ];
+
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
+
 }
