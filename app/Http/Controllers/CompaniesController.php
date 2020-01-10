@@ -75,7 +75,20 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        // Save Data
+        $companyUpdate = Company::where('id', $company->id)->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
+
+        if ($companyUpdate) {
+            return redirect()->route('companies.show', [
+                'company' => $company->id
+            ])->with('success', 'Company updated successfully');
+        }
+
+        // Redirect
+        return back()->withInput();
     }
 
     /**
