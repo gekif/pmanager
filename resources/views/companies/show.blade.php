@@ -28,9 +28,9 @@
     <div class="col-sm-3 colmd-3 col-lg-3 pull-right">
 
         <div class="sidebar-module">
-            <h4>Elsewhere</h4>
+            <h4>Actions</h4>
             <ol class="list-unstyled">
-                <li><a href="#">Edit</a></li>
+                <li><a href="/companies/{{ $company->id }}/edit/">Edit</a></li>
                 <li><a href="#">Delete</a></li>
                 <li><a href="#">Add New Member</a></li>
             </ol>
