@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="col-md-9 col-lg-9 col-sm-3 pull-left">
+    <div class="col-md-9 col-lg-9 col-sm-9 pull-left">
 
         <!-- Jumbotron -->
         <div class="jumbotron">
@@ -12,9 +12,9 @@
         </div>
 
         <!-- Example row of columns -->
-        <div class="row" style="background: white">
+        <div class="row col-md-12 col-lg-12 col-sm-12" style="background: white; margin: 10px;">
             @foreach ($company->projects as $project)
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-4">
                     <h2>{{ $project->name }}</h2>
                     <p class="text-danger">{{ $project->description }}</p>
                     <p><a class="btn btn-primary" href="/projects/{{ $project->id }}" role="button">View Project »</a></p>
