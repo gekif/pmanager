@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="panel panel-default">
-    <div class="panel-heading">Panel heading without title</div>
-    <div class="panel-body">
 
-        <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+<div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Companies</div>
+        <div class="panel-body">
 
+            <ul class="list-group">
+                @foreach ($companies as $company)
+                    <li class="list-group-item">{{ $company->name }}</li>
+                @endforeach
+            </ul>
+
+        </div>
     </div>
 </div>
+
 @endsection
