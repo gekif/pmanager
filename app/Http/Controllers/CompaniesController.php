@@ -26,7 +26,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        //
+        return view('companies.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
