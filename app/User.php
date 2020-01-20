@@ -9,14 +9,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'name', 
+        'email', 
         'password',
         'first_name',
         'middle_name',
@@ -24,6 +25,7 @@ class User extends Authenticatable
         'city',
         'role_id'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -34,16 +36,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    
     public function role()
     {
-        return $this->belongsTo('App\Role');
+		return $this->belongsTo('App\Role');
     }
 
 
     public function companies()
     {
-        return $this->hasMany('App\Company');
+		return $this->hasMany('App\Company');
     }
 
 
@@ -58,6 +60,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Project');
     }
+
 
     public function comments()
     {

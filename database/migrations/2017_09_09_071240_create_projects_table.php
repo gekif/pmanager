@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTaskUserTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTaskUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_user', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->integer('task_id')->unsigned();
+            $table->string('name');
+            $table->longText('description')->nullable();
+            $table->integer('company_id')->unsigned()->nullable();
             $table->integer('user_id')->unsigned();
-
+            $table->integer('days')->unsigned()->nullable();
+            
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('task_id')->references('id')->on('tasks');
-
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateTaskUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_user');
+        Schema::dropIfExists('projects');
     }
 }

@@ -9,9 +9,9 @@ class Comment extends Model
     protected $fillable = [
         'body',
         'url',
-        'user_id',
         'commentable_id',
-        'commentable_type'
+        'commentable_type',
+        'user_id'
     ];
 
 
@@ -19,18 +19,16 @@ class Comment extends Model
     {
         return $this->morphTo();
     }
+    
 
     /**
      * Return the user associated with this comment.
      *
      * @return array
      */
-    public function user()
-    {
-        return $this->hasOne('App\User', 'id', 'user_id');
-    }
-
-
-
+     public function user()
+     {
+         return $this->hasOne('\App\User', 'id', 'user_id');
+     }
 
 }

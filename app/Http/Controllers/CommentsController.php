@@ -9,9 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        if(Auth::check()){
+         if (Auth::check()){
             $comment = Comment::create([
                 'body' => $request->input('body'),
                 'url' => $request->input('url'),
@@ -25,8 +31,8 @@ class CommentsController extends Controller
             }
 
         }
-
-        return back()->withInput()->with('errors', 'Error creating new comment');
+        
+            return back()->withInput()->with('errors', 'Error creating new comment');
 
     }
 
