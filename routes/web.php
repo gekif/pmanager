@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 //->middleware('auth');
@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function () {
 
     Route::resource('companies', 'CompaniesController');
+
     Route::get('projects/create/{company_id?}', 'ProjectsController@create');
     Route::post('/projects/adduser', 'ProjectsController@adduser')->name('projects.adduser');
     Route::resource('projects', 'ProjectsController');
@@ -34,5 +35,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('tasks', 'TasksController');
     Route::resource('users', 'UsersController');
     Route::resource('comments', 'CommentsController');
+
 
 });

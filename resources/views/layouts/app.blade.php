@@ -47,7 +47,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
 
-                            <li><a href="{{ route('companies.index') }}">My Companies</a></li>
+                            <li><a href="{{ route('companies.index') }}">Companies</a></li>
                             <li><a href="{{ route('projects.index') }}">Projects</a></li>
                             <li><a href="{{ route('tasks.index') }}">Tasks</a></li>
 

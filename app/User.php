@@ -34,21 +34,26 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     public function role()
     {
         return $this->belongsTo('App\Role');
     }
+
 
     public function companies()
     {
         return $this->hasMany('App\Company');
     }
 
+
     public function tasks()
     {
         return $this->belongsToMany('App\Task');
     }
 
+
+    //many to many relationship
     public function projects()
     {
         return $this->belongsToMany('App\Project');
@@ -58,6 +63,5 @@ class User extends Authenticatable
     {
         return $this->morphMany('App\Comment', 'commentable');
     }
-
 
 }
